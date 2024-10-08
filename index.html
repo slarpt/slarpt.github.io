@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <div class="centered">
+<button id="playButton">click...</button>
+<div id="content">
 <body style="font-family: Arial">
 <body bgcolor="#1b1b1b"></body>
 <body><center></body><div class="content">
 <img src="blue.png">
-<h1>sypt</h1>
 <title>sypt</title>
 <link rel="stylesheet" href="styles.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<audio autoplay loop src="youtube_Zqa2mgjbOIM_audio.mp3"></audio>
-<body background="purplebg.png"></body>
+<audio loop id="backgroundMusic" src="youtube_Zqa2mgjbOIM_audio.mp3" preload="auto"></audio>
+<body background="windows11.png"></body>
+<h1>sypt</h1>
 <style>
     .button {
         background-color: #646464;
@@ -43,18 +45,47 @@
     height: 95vh;           /* Full viewport height */
     text-align: center;       /* Center text */
 }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        #content {
+            display: none; /* Initially hide content */
+            text-align: center;
+        }
+        #playButton {
+            padding: 10000px;
+            font-size: 40px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #playButton:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 </style>
 <style>
     .content {
     outline: 3px solid rgb(255, 255, 255); /* Change color and thickness as needed */
     padding: 50px 30px; /* Optional: Adds space between content and outline */
     border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode:normal;
 }
 </style>
 
-<p><img src="white_line_3.png"></p>
 
+<p><img src="white_line_3.png"></p>
 <p>
 the most retarded guns staff member ever
 </p>
@@ -80,3 +111,14 @@ the most retarded guns staff member ever
 <a href="https://guns.lol" class="button">world's best biolink</a>
 </p>
 </div>
+<script>
+    const playButton = document.getElementById('playButton');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+    const content = document.getElementById('content');
+
+    playButton.addEventListener('click', () => {
+        backgroundMusic.play();
+        playButton.style.display = 'none'; // Hide button after clicking
+        content.style.display = 'block'; // Show content
+    });
+</script>
